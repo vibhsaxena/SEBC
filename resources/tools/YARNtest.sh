@@ -1,8 +1,8 @@
 #!/bin/sh
 # Confirm the path values given below correspond to your installation
 
-HADOOP_MR=/opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce
-HADOOP_PATH=/opt/cloudera/parcels/CDH/bin
+HADOOP_MR=  /opt/cloudera/parcels/CDH-5.8.0-1.cdh5.8.0.p0.42/jars
+HADOOP_PATH=/opt/cloudera/parcels/CDH-5.8.0-1.cdh5.8.0.p0.42/bin
 
 # Mark start of the loop
 echo Testing loop started on `date`
