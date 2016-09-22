@@ -4,7 +4,7 @@
 **1. vm.swappiness**
 
 ///
-[ec2-user@CDH5Master ~]$  cat /proc/sys/vm/swappiness
+[ec2-user@ip-172-31-25-51 ~]$  cat /proc/sys/vm/swappiness
 
 1
 ///
@@ -13,7 +13,7 @@
 **2. check if noatime is set for non-root**
 
 It's not:  
-[ec2-user@CDH5Master ~]$ cat /proc/mounts | grep noatime
+[ec2-user@ip-172-31-25-51 ~]$ cat /proc/mounts | grep noatime
 /dev/xvda1 / ext4 rw,noatime,data=ordered 0 0
 
 
@@ -33,11 +33,11 @@ Reserved blocks gid:      0 (group root)
 
 **4. Check the user limits for maximum file descriptors and processes**
 
-[ec2-user@CDH5Master ~]$ ulimit -a | grep processes
-max user processes              (-u) 60086
+[ec2-user@ip-172-31-25-51 test]$ ulimit -a | grep processes
+max user processes              (-u) 4096
 
-file desc:
-[ec2-user@CDH5Master ~]$ ulimit -n
+File desc:
+[ec2-user@ip-172-31-25-51  ~]$ ulimit -n
 1024
 
 
@@ -46,10 +46,14 @@ file desc:
 
 ///
 
-[ec2-user@CDH5Master ~]$ host ec2-52-4-184-142.compute-1.amazonaws.com.
-ec2-52-4-184-142.compute-1.amazonaws.com has address 172.31.58.249
-[ec2-user@CDH5Master ~]$ host 172.31.58.249
-249.58.31.172.in-addr.arpa domain name pointer ip-172-31-58-249.ec2.internal.
+[ec2-user@ip-172-31-25-51 test]$ hostname
+ip-172-31-25-51.ec2.internal
+[ec2-user@ip-172-31-25-51 test]$ host ip-172-31-25-51.ec2.internal
+ip-172-31-25-51.ec2.internal has address 172.31.25.51
+[ec2-user@ip-172-31-25-51 test]$ host 172.31.25.51
+51.25.31.172.in-addr.arpa domain name pointer ip-172-31-25-51.ec2.internal.
+
+
 ///
 
 **6. Verify/enable the nscd service**
@@ -57,14 +61,14 @@ ec2-52-4-184-142.compute-1.amazonaws.com has address 172.31.58.249
 *nscd service wasn't installed, installed and started*
 
 ///
-[ec2-user@CDH5Master ~]$ service nscd status
+[ec2-user@ip-172-31-25-51 ~]$ service nscd status
 nscd (pid 3137) is running...
 ///
 
 **7. Verify/enable the ntpd service**
 
 ///
-[ec2-user@CDH5Master ~]$ service ntpd status
+[ec2-user@ip-172-31-25-51 ~]$ service ntpd status
 ntpd (pid  2551) is running...
 ///
 
