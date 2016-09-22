@@ -1,4 +1,4 @@
-# Replica Working
+# Teragen and Terasort benchmarks
 
 **teragen**
 
