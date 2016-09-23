@@ -1,4 +1,9 @@
 
+* [ec2-user@ip-172-31-23-200 ~]$ sudo cat /etc/yum.repos.d/
+
+cloudera-manager.repo           mysql-community-source.repo     redhat-rhui-client-config.repo  rhui-load-balancers.conf
+mysql-community.repo            redhat.repo                     redhat-rhui.repo
+
 
 * mysql> grant all privileges on *.* to 'cloudera'@'54.173.162.99' with grant option;
 
